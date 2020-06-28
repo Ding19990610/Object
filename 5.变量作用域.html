@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var 声明的变量
+        // 什么是作用域？
+        // 一个变量，在哪里能够被使用？  用的是哪一个值？
+        // 作用域分类: 全局作用域  局部作用域
+                // 什么是全局作用域？  特点是什么？
+                    // window对象下， 无论在哪都可以被访问   
+                            // ex：for if var 
+                 // 什么是局部作用域？  特点是什么？
+                    // function方法体var声明的变量下，   私有，仅能在函数内部访问
+
+        var test = "测试的变量";    //window.test = "测试的变量"
+        console.log(test) 
+        for(var i=0;i<3;i++){
+            console.log(test)  //window.console.log(test)
+        }
+        console.log(i)
+        function foo(){
+            var x = "局部变量";
+            console.log(test)
+            console.log(i)
+        }
+        foo();
+        console.log(x) //x is not defind ---->>>私有的变量，不能随意访问
+        // 在哪里 使用的值是什么？
+
+
+    </script>
+</body>
+</html>

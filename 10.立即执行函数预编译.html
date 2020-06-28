@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        GO{}
+        GO{foo:function(){}}
+
+        注意:立即执行函数没有函数声明提升的过程,
+             普通函数有提升过程
+        */
+        function foo(){}
+        (function(){})();
+    </script>
+</body>
+</html>

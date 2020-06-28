@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i = 0; 
+        (function(){
+            var i = i;
+            console.log("立即执行函数----------", i)
+        })();
+
+        function foo(){
+            var i=i;
+            console.log("普通函数",i)
+        }
+        foo();
+    </script>
+</body>
+</html>

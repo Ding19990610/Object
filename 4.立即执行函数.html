@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 立即执行函数::直接执行，无解析过程
+        (function(){
+            console.log("立即执行函数")
+        })
+
+        // for 执行结束之后，setTimeout仍旧未执行，这个for循环，只表示setTimeout执行了三次
+
+      //   for (var i = 0; i < 3; i++) {
+      //     (function () {
+      //         console.log(i)
+      //     })();
+      //   }
+
+      //   for (var i = 0; i < 3; i++) {
+      //       setTimeout(function(){
+      //           console.log(i)  // 3 3 3
+      //       },16.2)
+      //   }
+
+      //   for (var i = 0; i < 3; i++) {
+      //     (function () {
+      //       var x = i;
+      //       setTimeout(function () {
+      //         console.log(x); // 123
+      //       }, 16.2);
+      //     })();
+      //   }
+
+      // 解决了  清空timer 仅清空最后一个timer 
+      for (var i = 0; i < 3; i++) {
+        (function () {
+          var timer = setTimeout(function () {
+              console.log('111111')
+              console.log(timer)
+              clearInterval(timer)
+          }, 500);
+        })();
+      }
+    </script>
+</body>
+</html>

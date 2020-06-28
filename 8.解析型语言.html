@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    1..语言分析:  检查js代码是否有[语法错误 写法错误]
+    2..预编译   分情况   
+        2.1  创建对象:  
+                全局: 创建  GO 对象  
+                局部: 创建  AO 对象
+        2.2  提升当前作用域下 var 声明的变量 赋值undefined
+        2.3  提升当前作用域下 所有 声明的函数
+    3..解析执行  对每一行代码进行分别执行
+        对所有的变量 重新赋值
+        对提升的变量 重新赋值
+     -->
+    <script>
+    /*Go{
+       a:undefine,
+       b:undeifne,
+       foo:function(){} 
+    }
+    // 以上预编译 以下未解析执行
+     Go{
+       a:0,
+       b:undeifne,
+       foo:function(){} 
+    }  
+       Go{
+       a:0,
+       b:2,
+       foo:function(){} 
+    }  
+    执行函数体,局部   创建AO对象
+    AO{}
+    Go{
+       a:0,
+       b:12,
+       foo:function(){} 
+    }  
+
+    AO 消失 
+    关闭浏览器  GO 消失
+
+    */
+    var a = 0;
+      var b = 2;
+
+      function foo() {
+        b = 12;
+      }
+      foo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数不执行,没有AO对象
+        /*AO{
+            c:undefined,
+            d:undefined
+        }
+        
+        */
+         /*
+        foo 不执行没有 AO
+        AO{
+            c:undefined,
+            d:undefined,
+        }
+        AO{
+            c:undefined,
+            d:undefined,
+            a:undefined
+            b:undefined,
+        }
+        AO{
+            c:undefined,
+            d:undefined,
+            a:undefined
+            b:undefined,
+            bar:function(){}
+        }
+
+        // 解析执行
+        AO{
+            c:undefined,
+            d:undefined,
+            a:0
+            b:undefined,
+            bar:function(){}
+        }
+        AO{
+            c:undefined,
+            d:undefined,
+            a:0
+            b:12,
+            bar:function(){}
+        }
+        AO{
+            c:undefined,
+            d:undefined,
+            a:0
+            b:120,
+            bar:function(){}
+        }
+        foo 函数执行完毕  AO 销毁
+        */
+        foo()
+        function foo(c,d){
+            var a = 0;
+            var b = 12
+            b=120
+            function bar(){
+            }
+        }
+
+    </script>
+</body>
+</html>

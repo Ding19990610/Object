@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 同步代码 执行是最快的
+        // setTimeout：真异步
+        // 需要 慢慢  执行的  并且代码放在上面的,才用异步
+        // 定时器:表示经过多久 执行回调函数
+        // para1:回调函数
+        // para2:时间，
+        setTimeout(function(){
+            console.log("嘻嘻嘻")
+        }, 16.2);//浏览器刷新时间是16.2毫秒
+        console.log("哈哈哈")
+    </script>
+</body>
+</html>

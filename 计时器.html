@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 计时器: 
+        // setInterval :每隔para2秒，执行一次para1 (回调函数)
+        // 无限循环 执行
+    
+    // var x =  0;
+    // var timer = setInterval(function(){
+    //     x++;
+    //     console.log("xxxx")
+    //     console.log(x);
+    //     if(x>10){
+    //         clearInterval(timer); 
+    //         // 清空计时器: 如果不清空，页面性能变差
+    //     // 出口:
+    //     }
+    // },500);
+    
+    // console.log(timer);
+    // console.log("啊啊啊")
+
+    // var timer;
+    // 注意：多次执行同一个setInterval,到底清除的哪一个
+    // for(var i=0;i<3;i++){
+    //     var x = 0;
+    //     var timer;
+    //     timer = setInterval(function(){
+    //     console.log("XXX");
+    //     console.log(timer);
+    //     //***坑点:::  在这里清空，清空的是最后一次执行的计时器timer
+    //     clearInterval(timer); 
+    // },500);
+    // console.log("timer---------",timer); //timer形成多个,需要清空每一个
+    // clearInterval(timer);  //清除了多个timer   //坑点:setInterval失效
+    //---->>>>目的:: 需要 分别保存timer的值  1 ，2  ，3
+    // 在外围包裹一个立即执行函数
+
+    for(var i=0;i<3;i++){
+        (function(){
+            var timer;
+            timer = setInterval(function(){
+            console.log("XXX");
+            console.log(timer);
+            clearInterval(timer); 
+        },500)
+        });
+    }
+
+    // 如何解决失效问题？----->>>>慢
+
+    // 清除同一个最后一个timer 3次
+    // setTimeout(function(){
+
+    //     clearInterval(timer);
+    // },1000)
+    
+    </script>
+</body>
+</html>

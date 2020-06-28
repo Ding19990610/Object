@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var test = "测试的变量" ;
+        function foo(){
+            var a = 0 ; //不会销毁,因为bar函数体中  还需要使用
+            console.log(a);
+            var c = "ccc" ; // 销毁
+            console.log(b) //   b is not defind
+            // 大作用域 不能访问小作用域内的变量
+            return function bar(){
+                var b = "b";
+                ++a;
+                console.log(a ,"+++++++");
+                var a;
+            }
+            // bar();
+        }
+        var bar = foo();
+        bar();
+        bar();
+        bar();
+
+        // 变量的使用规则:
+        // 1..自己的作用域中找var  声明的变量
+        // 2..如果没有,则去上一层作用域中找, 直到找到全局的作用域为止
+        // 3..在中间任何一个作用域中找到,那么使用的就是那一层的变量
+    </script>
+</body>
+</html>

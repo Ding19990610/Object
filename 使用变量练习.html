@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 只有var 是声明变量,其他一律是使用变量
+        // 使用变量,直接用值,重新赋值
+        function foo(){
+            var a = 11;   //声明变量
+            function bar(){
+                console.log(a) //11   直接用值
+                a = 22; //重新赋值
+            }
+            bar();
+            console.log(a) //22
+        }
+        foo();
+        // 为什么找var声明的变量?
+            // 所有 作用域中 var 声明的变量  都会提升到 当前作用于的 最顶端, 赋值不提升
+        // undefined: 变量已声明,未赋值
+    </script>
+</body>
+</html>
